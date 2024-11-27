@@ -28,8 +28,8 @@ loom {
 
     forge {
         convertAccessWideners = true
-        mixinConfig "vs_addon_template.mixins.json"
-        mixinConfig "vs_addon_template-common.mixins.json"
+        mixinConfig "pilot.mixins.json"
+        mixinConfig "pilot-common.mixins.json"
         extraAccessWideners.add loom.accessWidenerPath.get().asFile.name
     }
 }
@@ -46,7 +46,7 @@ dependencies {
     forge "net.minecraftforge:forge:$forge_version"
 
     // Architectury API
-    include(modApi "dev.architectury:architectury-forge:${rootProject.architectury_version}")
+    include(modApi("dev.architectury:architectury-forge:${rootProject.architectury_version}"))
 
     // Valkyrien Skies 2
     modApi("org.valkyrienskies:valkyrienskies-120-forge:$vs2_version") { transitive = false }

@@ -125,5 +125,25 @@ publishing {
             name = "Create"
             url = "https://maven.tterrag.com/"
         }
+        maven {
+            name = "Modrinth"
+            url = "https://api.modrinth.com/maven"
+            content {
+                includeGroup "maven.modrinth"
+            }
+        }
+        maven {
+            url = "https://jitpack.io"
+        }
+        maven {
+            url = "https://cursemaven.com"
+            content {
+                includeGroup "curse.maven"
+            }
+        }
+        maven {
+            name = "Fabric"
+            url = "https://maven.fabricmc.net/"
+        }
     }
 }

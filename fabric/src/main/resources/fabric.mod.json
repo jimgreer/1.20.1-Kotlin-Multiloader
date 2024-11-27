@@ -1,48 +1,36 @@
 {
   "schemaVersion": 1,
-  "id": "${mod_id}",
+  "id": "pilot",
   "version": "${version}",
-  "name": "${mod_name}",
-  "description": "{$mod_description}",
+  "name": "Pilot",
+  "description": "A VS2 addon that creates entities to control Create's Redstone Links",
   "authors": [
-    "${mod_author}"
+    "jgreer"
   ],
   "contact": {
-    "homepage": "${homepage}",
-    "sources": "${sources}"
+    "homepage": "https://github.com/jimgreer/pilot",
+    "sources": "https://github.com/jimgreer/pilot"
   },
-  "license": "${mod_license}",
-  "icon": "assets/${mod_id}/icon.png",
+  "license": "Apache-2.0",
+  "icon": "assets/pilot/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
       {
         "adapter": "kotlin",
-        "value": "io.github.techtastic.vs_addon_template.fabric.VSAddonTemplateModFabric"
-      }
-    ],
-    "client": [
-      {
-        "adapter": "kotlin",
-        "value": "io.github.techtastic.vs_addon_template.fabric.VSAddonTemplateModFabric${'$'}Client"
-      }
-    ],
-    "preLaunch": [
-      {
-        "adapter": "kotlin",
-        "value": "io.github.techtastic.vs_addon_template.fabric.ValkyrienPreLaunch"
+        "value": "dev.jgreer.pilot.fabric.PilotModFabric"
       }
     ]
   },
   "mixins": [
-    "vs_addon_template-common.mixins.json",
-    "vs_addon_template.mixins.json"
+    "pilot.mixins.json",
+    "pilot-common.mixins.json"
   ],
   "depends": {
-    "minecraft": "${minecraft_version}",
-    "valkyrienskies": ">=${vs2_version}",
-    "fabricloader": ">=${fabric_loader_version}",
-    "fabric-api": "*",
-    "architectury": ">=${architectury_version}"
+    "fabric": "*",
+    "minecraft": ">=1.20.1",
+    "architectury": ">=9.1.12",
+    "valkyrienskies": ">=2.1.3-beta.1",
+    "create": ">=0.5.1-d-build.1161+mc1.20.1"
   }
 }
