@@ -147,3 +147,17 @@ publishing {
         }
     }
 }
+
+tasks.register('copyMods') {
+    doLast {
+        copy {
+            from project.rootDir.toString() + "/libs"
+            include "*.jar"
+            into "run/mods"
+        }
+    }
+}
+
+tasks.named('runClient').configure {
+    dependsOn(tasks.named('copyMods'))
+}
