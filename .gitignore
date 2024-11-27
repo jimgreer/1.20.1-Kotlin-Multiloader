@@ -1,19 +1,22 @@
-build/
-*.ipr
-run/
-*.iws
-out/
-*.iml
+# Gradle
 .gradle/
-output/
-bin/
-libs/
+build/
+out/
+classes/
 
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.settings/
 .classpath
 .project
-.idea/
-classes/
-.metadata
-.vscode
-.settings
-*.launch
+.vscode/
+
+# Minecraft
+run/
+logs/
+
+# macOS
+.DS_Store

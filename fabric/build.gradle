@@ -29,7 +29,7 @@ dependencies {
     modImplementation("net.fabricmc:fabric-language-kotlin:1.10.10+kotlin.1.9.10")
 
     // Architectury API
-    include(modApi "dev.architectury:architectury-fabric:${rootProject.architectury_version}")
+    include(modApi("dev.architectury:architectury-fabric:${rootProject.architectury_version}"))
 
     // Mod menu
     modImplementation("com.terraformersmc:modmenu:3.2.3")
@@ -40,6 +40,9 @@ dependencies {
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }
+
+    // Add Create
+    modImplementation "com.simibubi.create:create-fabric-${minecraft_version}:${create_version}"
 }
 
 processResources {
@@ -117,6 +120,10 @@ publishing {
                     password = System.getenv("GITHUB_TOKEN")
                 }
             }
+        }
+        maven {
+            name = "Create"
+            url = "https://maven.tterrag.com/"
         }
     }
 }
